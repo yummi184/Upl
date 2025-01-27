@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭 Media Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            background: url('https://i.ibb.co/c3BV9Vg/file-Go-Pt-Nixifk5np9-J8o-AFv-ZR-4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blur: 10px;
+        }
+        header {
+            margin-top: 20px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 3.5em;
+            text-shadow: 2px 2px 5px black;
+            color: #f7a400;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #ddd;
+        }
+        .gallery {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .media-item {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        .media-item img, .media-item video {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .media-item a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #f7a400;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+        .media-item a:hover {
+            color: #17a2b8;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭 Media Gallery</h1>
+        <p>Browse through all the uploaded media files!</p>
+    </header>
+
+    <div id="gallery" class="gallery"></div>
+
+    <script>
+        async function fetchMedia() {
+            const res = await fetch('/media');
+            const mediaList = await res.json();
+            const gallery = document.getElementById('gallery');
+
+            if (mediaList.length === 0) {
+                gallery.innerHTML = `<p>No media uploaded yet.</p>`;
+                return;
+            }
+
+            mediaList.forEach(media => {
+                const mediaItem = document.createElement('div');
+                mediaItem.classList.add('media-item');
+                
+                const mediaElement = document.createElement(media.type.startsWith('image') ? 'img' : 'video');
+                mediaElement.src = media.url;
+                mediaElement.alt = media.name;
+
+                const mediaLink = document.createElement('a');
+                mediaLink.href = media.url;
+                mediaLink.target = "_blank";
+                mediaLink.textContent = `View ${media.name}`;
+
+                mediaItem.appendChild(mediaElement);
+                mediaItem.appendChild(mediaLink);
+
+                gallery.appendChild(mediaItem);
+            });
+        }
+
+        // Call the fetchMedia function to load and display the media
+        fetchMedia();
+    </script>
+</body>
+</html>

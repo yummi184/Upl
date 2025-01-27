@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭 Uploader</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            text-align: center;
+            background: url('https://i.ibb.co/c3BV9Vg/file-Go-Pt-Nixifk5np9-J8o-AFv-ZR-4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-blur: 10px;
+        }
+        header {
+            margin-top: 20px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 3.5em;
+            text-shadow: 2px 2px 5px black;
+            color: #f7a400;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #ddd;
+        }
+        form {
+            margin: 30px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #f7a400;
+        }
+        input[type="file"] {
+            margin: 15px 0;
+            padding: 12px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: #444;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        input[type="file"]:hover {
+            background: #555;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #218838;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 500px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #info {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: #ddd;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        #info h3 {
+            font-size: 1.8em;
+            color: #f7a400;
+        }
+        #info ul, #info ol {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+        #info ul li, #info ol li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #17a2b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #f7a400;
+        }
+        #uptime {
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #f7a400;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            form {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            button, input[type="file"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭 Uploader</h1>
+        <p>Your all-in-one media uploader. Share your files instantly with a unique link!</p>
+    </header>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <h2>Upload Your Media</h2>
+        <input type="file" name="media" accept="*" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="response"></div>
+
+    <div id="uptime"></div>
+
+    <div id="info">
+        <h3>What is 𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭 Uploader?</h3>
+        <p>𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭 Uploader is a versatile media hosting service that allows you to upload and share all types of files, including:</p>
+        <ul>
+            <li>Images (JPEG, PNG, GIF, etc.)</li>
+            <li>Videos (MP4, AVI, etc.)</li>
+            <li>Audio (MP3, WAV, etc.)</li>
+            <li>Documents (PDF, DOCX, etc.)</li>
+        </ul>
+        <p>Once you upload a file, you'll receive a unique, shareable link that you can use to access or share your media with others.</p>
+
+        <h3>Features</h3>
+        <ul>
+            <li>Supports all major file types.</li>
+            <li>Quick and easy file sharing.</li>
+            <li>Secure uploads with unique links.</li>
+            <li>Responsive design for seamless use on any device.</li>
+        </ul>
+
+        <h3>How to Use?</h3>
+        <ol>
+            <li>Click the "Choose File" button to select your media.</li>
+            <li>Click the "Upload" button to upload your file.</li>
+            <li>Copy the unique link provided and share it with anyone!</li>
+        </ol>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const res = await fetch('/upload', { method: 'POST', body: formData });
+            const data = await res.json();
+            document.getElementById('response').innerHTML = `
+                <p>${data.message}</p>
+                <p><a href="${data.url}" target="_blank">${data.url}</a></p>
+            `;
+        });
+
+        async function fetchUptime() {
+            const res = await fetch('/uptime');
+            const data = await res.json();
+            document.getElementById('uptime').innerHTML = `Server Uptime: ${data.uptime}`;
+        }
+        fetchUptime();
+    </script>
+</body>
+</html>
