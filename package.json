@@ -1,5 +1,5 @@
 {
-  "name": "𝗘𝗠𝗠𝗬𝗛𝗘𝗡𝗭-uploader",
+  "name": "henz-uploader",
   "version": "1.0.0",
   "description": "A simple media uploader that allows you to upload and share files with unique links.",
   "main": "server.js",
